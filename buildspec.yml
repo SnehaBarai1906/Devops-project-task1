@@ -1,11 +1,12 @@
-# buildspec.yml
 version: 0.2
 
 phases:
   build:
     commands:
-      - echo "No build needed for static site"
+      - echo "No build step required for static site"
 
 artifacts:
   files:
-    - '**/*'
+    - index.html
+    - appspec.yml
+    - script/**
