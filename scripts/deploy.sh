@@ -2,8 +2,14 @@
 
 echo "🚀 Starting deployment script..."
 
-mkdir -p /home/ec2-user/app    # Create the folder if it doesn’t exist
-cd /home/ec2-user/app          # Now cd won't fail
-chmod 755 index.html           # Only if index.html exists
+mkdir -p /var/www/html
+cd /var/www/html
+
+if [ -f index.html ]; then
+  chmod 755 index.html
+  echo "✅ index.html permission updated"
+else
+  echo "⚠️ index.html not found!"
+fi
 
 echo "✅ Deployment script complete."
